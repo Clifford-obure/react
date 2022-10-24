@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import { MovieProvider } from "./MovieContext"
 import './App.css';
+import Btn from './components/Btn';
+import ModeToggler from './components/ModeToggler';
+import Movie from './components/Movie';
+import Promo from './components/Promo';
 
 function App() {
+  var message = "This is the one ";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <MovieProvider>
+    <div>
+
+      <Btn />
+      <ModeToggler />
+      <Promo message={message}/>
+      <Movie/>
     </div>
+    </MovieProvider>
   );
 }
 
